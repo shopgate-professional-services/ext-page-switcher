@@ -1,0 +1,79 @@
+{
+  "version": "1.0.0-beta.1",
+  "id": "@shopgate-project/ext-page-switcher",
+  "components": [
+    {
+      "id": "SwitchHeader",
+      "type": "portals",
+      "path": "frontend/components/SwitchHeader",
+      "target": "app-bar.right"
+    },
+    {
+      "id": "Logo",
+      "path": "frontend/components/Logo",
+      "target": "app-bar.center",
+      "type": "portals"
+    },
+    {
+      "id": "HideBackArrow",
+      "path": "frontend/components/HideBackArrow",
+      "target": "app-bar.left",
+      "type": "portals"
+    },
+    {
+      "id": "SwitchSelection",
+      "path": "frontend/reducers",
+      "type": "reducers"
+    },
+    {
+      "id": "Subscribers",
+      "path": "frontend/subscriptions",
+      "type": "subscribers"
+    }
+  ],
+  "configuration": {
+    "pageLinking": {
+      "type": "admin",
+      "destination": "both",
+      "default": [
+        {
+          "label": "Women",
+          "categoryId": "123",
+          "path": "/"
+        },
+        {
+          "label": "Men",
+          "categoryId": "456",
+          "path": "/page/men"
+        },
+        {
+          "label": "Kids",
+          "categoryId": "789",
+          "path": "/page/kids"
+        }
+      ],
+      "params": {
+        "type": "json",
+        "label": "Page linking"
+      }
+    },
+    "linkColor": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "",
+      "params": {
+        "type": "text",
+        "label": "Color of the links in the header"
+      }
+    },
+    "linkSelectedColor": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "",
+      "params": {
+        "type": "text",
+        "label": "Color of the links in the header"
+      }
+    }
+  }
+}
