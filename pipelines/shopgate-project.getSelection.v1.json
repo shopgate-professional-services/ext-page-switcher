@@ -18,8 +18,8 @@
     "steps": [
       {
         "type": "extension",
-        "id": "@shopgate-project/ext-page-switcher",
-        "path": "@shopgate-project/ext-page-switcher/getSelection.js",
+        "id": "@shopgate-project/page-switcher",
+        "path": "@shopgate-project/page-switcher/getSelection.js",
         "input": [
           {
             "key": "selection",

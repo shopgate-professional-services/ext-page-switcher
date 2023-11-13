@@ -5,7 +5,7 @@ import getConfig from '../helpers/getConfig';
 const { pageLinking } = getConfig();
 
 const SWITCH_WHITELIST = pageLinking.map(page => page.path);
-const REDUX_NAMESPACE_SELECTION = '@shopgate-project/ext-page-switcher/SwitchSelection';
+const REDUX_NAMESPACE_SELECTION = '@shopgate-project/page-switcher/SwitchSelection';
 
 /**
  * Creates a selector that determines whether the switch should be visible

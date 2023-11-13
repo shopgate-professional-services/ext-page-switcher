@@ -13,11 +13,15 @@ function isEmpty(selection) {
 module.exports = async (context, { selection }) => {
   try {
     let updatedSelection = {};
-    let cachedSelection = {};
+    let cachedSelection;
 
     // get selection from cache
     try {
       cachedSelection = await context.storage.extension.get('selection');
+
+      if (!cachedSelection) {
+        cachedSelection = {};
+      }
     } catch (err) {
       context.log.error(err, 'Unable to fetch selection from cache');
     }
@@ -34,6 +38,7 @@ module.exports = async (context, { selection }) => {
       context.log.info('New start with cache selection');
     }
 
+    // change selection to new selected page
     if (!isEmpty(cachedSelection) && !isEmpty(selection)) {
       updatedSelection = selection;
       context.log.info(updatedSelection, 'Selection changed');

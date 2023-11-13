@@ -1,6 +1,6 @@
 {
   "version": "1.0.0-beta.1",
-  "id": "@shopgate-project/ext-page-switcher",
+  "id": "@shopgate-project/page-switcher",
   "components": [
     {
       "id": "SwitchHeader",
@@ -72,7 +72,7 @@
       "default": "",
       "params": {
         "type": "text",
-        "label": "Color of the links in the header"
+        "label": "Color of the selected link/page"
       }
     }
   }

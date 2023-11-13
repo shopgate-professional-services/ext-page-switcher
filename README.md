@@ -1,4 +1,4 @@
-# Shopgate Connect - Extension ext-page-switcher
+# Shopgate Connect - Extension page-switcher
 
 This extension adds a page switcher to the standard header. The selected page will be the 'home page' on the next start.
 
