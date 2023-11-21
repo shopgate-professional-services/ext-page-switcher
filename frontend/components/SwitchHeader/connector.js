@@ -32,4 +32,4 @@ const makeMapStateToProps = () => {
   });
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps); // added mapDispatchToProps
+export default connect(makeMapStateToProps, mapDispatchToProps);
