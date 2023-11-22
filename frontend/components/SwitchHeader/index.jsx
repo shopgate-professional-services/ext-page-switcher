@@ -17,8 +17,7 @@ class SwitchHeader extends Component {
     selection: PropTypes.shape().isRequired,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
   /**
    * The render method

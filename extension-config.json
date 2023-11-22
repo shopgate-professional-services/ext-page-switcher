@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-rc.1",
   "id": "@shopgate-project/page-switcher",
   "components": [
     {
@@ -18,6 +18,12 @@
       "id": "HideBackArrow",
       "path": "frontend/components/HideBackArrow",
       "target": "app-bar.left",
+      "type": "portals"
+    },
+    {
+      "id": "SwitchHomeTabBarAction",
+      "path": "frontend/components/SwitchHomeTabBarAction",
+      "target": "tab-bar.home",
       "type": "portals"
     },
     {

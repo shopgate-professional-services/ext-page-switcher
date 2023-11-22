@@ -14,8 +14,7 @@ class SwitchButton extends Component {
     setSelection: PropTypes.func.isRequired,
   };
 
-  static defaultProps = {
-  };
+  static defaultProps = {};
 
   handleClick = (link) => {
     this.props.setSelection(link);

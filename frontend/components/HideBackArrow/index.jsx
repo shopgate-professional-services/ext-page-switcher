@@ -6,16 +6,10 @@ import connect from './connector';
  * The HideBackArrow component
  * @returns {JSX}
  */
-const HideBackArrow = ({ isVisible, children }) => {
+const HideBackArrow = ({ isVisible, children }) => (
   // hide back arrow on switch pages
-  const hideArrow = isVisible;
-
-  if (hideArrow) {
-    return null;
-  }
-
-  return children;
-};
+  isVisible ? null : children
+);
 
 HideBackArrow.propTypes = {
   isVisible: PropTypes.bool.isRequired,
