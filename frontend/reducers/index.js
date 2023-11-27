@@ -1,6 +1,5 @@
 import {
   SET_SWITCH_SELECTION,
-  GET_SWITCH_SELECTION,
   ERROR_SWITCH_SELECTION,
 } from '../constants';
 
@@ -19,10 +18,6 @@ const SwitchSelection = (
       return {
         ...state,
         selection: action.selection,
-      };
-    case GET_SWITCH_SELECTION:
-      return {
-        ...state,
       };
     case ERROR_SWITCH_SELECTION:
       return {

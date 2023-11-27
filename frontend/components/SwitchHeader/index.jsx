@@ -29,7 +29,7 @@ class SwitchHeader extends Component {
       const isActive = this.props.selection.path === link.path;
 
       return (
-        <li key={link.label} className={styles.menuItem}>
+        <li key={link.label} className={`${styles.menuItem} ${styles.noSelectStyle}`}>
           <SwitchButton isActive={isActive} link={link} />
         </li>
       );

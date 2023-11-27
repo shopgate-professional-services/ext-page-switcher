@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { getSelection } from '../../../selectors';
-import { makeGetSelection } from '../../../actions';
+import { makeUpdateSelection } from '../../../actions';
 
 /**
  * Maps the contents of the state to the component props.
@@ -8,7 +8,7 @@ import { makeGetSelection } from '../../../actions';
  * @return {Object}
  */
 const mapDispatchToProps = dispatch => ({
-  setSelection: path => dispatch(makeGetSelection(path)),
+  setSelection: path => dispatch(makeUpdateSelection(path)),
 });
 
 /**

@@ -9,7 +9,7 @@ import {
  * @param {*} selection .
  * @returns {Object}
  */
-export const makeGetSelection = selection => dispatch => new PipelineRequest('shopgate-project.getSelection')
+export const makeUpdateSelection = selection => dispatch => new PipelineRequest('shopgate-project.updateSelection')
   .setInput({ selection })
   .dispatch()
   .then(({ updatedSelection }) => {

@@ -8,7 +8,7 @@ import {
 } from '@shopgate/engage/core';
 import { logger } from '@shopgate/pwa-core/helpers';
 import { getSelection } from '../selectors';
-import { makeGetSelection } from '../actions';
+import { makeUpdateSelection } from '../actions';
 
 export default (subscribe) => {
   const setSwitchSelection$ = main$.filter(({ action }) => action.type === 'SET_SWITCH_SELECTION');
@@ -38,9 +38,9 @@ export default (subscribe) => {
     const selection = getSelection(getState());
 
     try {
-      dispatch(makeGetSelection(selection));
+      dispatch(makeUpdateSelection(selection));
     } catch (e) {
-      logger.error('Could not get selection.', e);
+      logger.error('Could not update selection.', e);
     }
   });
 };

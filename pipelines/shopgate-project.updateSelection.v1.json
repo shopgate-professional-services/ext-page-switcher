@@ -1,7 +1,7 @@
 {
   "version": "1",
   "pipeline": {
-    "id": "shopgate-project.getSelection.v1",
+    "id": "shopgate-project.updateSelection.v1",
     "public": true,
     "input": [
       {
@@ -19,7 +19,7 @@
       {
         "type": "extension",
         "id": "@shopgate-project/page-switcher",
-        "path": "@shopgate-project/page-switcher/getSelection.js",
+        "path": "@shopgate-project/page-switcher/updateSelection.js",
         "input": [
           {
             "key": "selection",

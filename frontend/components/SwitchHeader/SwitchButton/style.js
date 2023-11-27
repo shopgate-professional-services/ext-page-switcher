@@ -11,6 +11,9 @@ const button = css({
   textDecoration: 'none',
   color: linkColor || colors.gray,
   fontSize: '14px',
+  ':focus': {
+    outline: 'none !important',
+  },
 });
 
 const activeButton = css({
@@ -19,6 +22,9 @@ const activeButton = css({
   textDecoration: 'none',
   color: linkSelectedColor || colors.cta,
   fontSize: '14px',
+  ':focus': {
+    outline: 'none !important',
+  },
 });
 
 export default {

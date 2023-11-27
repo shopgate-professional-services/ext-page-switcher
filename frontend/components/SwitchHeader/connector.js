@@ -4,7 +4,7 @@ import {
   makeGetIsSwitchVisible,
   getSelection,
 } from '../../selectors';
-import { makeGetSelection } from '../../actions';
+import { makeUpdateSelection } from '../../actions';
 
 /**
  * Maps the contents of the state to the component props.
@@ -15,7 +15,7 @@ const mapDispatchToProps = dispatch => ({
   openPage: pathname => dispatch(historyPush({
     pathname,
   })),
-  setSelection: path => dispatch(makeGetSelection(path)),
+  setSelection: path => dispatch(makeUpdateSelection(path)),
 });
 
 /**
