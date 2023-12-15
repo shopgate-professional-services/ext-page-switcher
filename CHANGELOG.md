@@ -2,19 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
-
-## [Unreleased]
+## [1.0.0] - 2023-11-10
 ### Added
-### Changed
-### Fixed
-### Removed
-
-## [1.0.0] - YYYY-MM-DD
-### Added
-### Changed
-### Fixed
-### Removed
+- Adds a page switcher to the header
+- The selected page will be the 'home page'
 
 
 [Unreleased]: https://github.com/shopgate/ext-cliplister/compare/v1.0.0...HEAD

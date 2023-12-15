@@ -1,4 +1,42 @@
-# Shopgate Connect - Extension ext-page-switcher
+# Shopgate Connect - Extension page-switcher
+
+This extension adds a page switcher to the standard header. The selected page will be the 'home page' on the next start.
+
+## Configuration
+
+Set the following value in your Shopgate Connect Admin:
+
+  * pageLinking - (json) Array
+    * label - (string) Link label
+    * path - (string) Path to the linked page
+    * categoryId - (string) The page represents this category
+  * linkColor - (string) Link color
+  * linkSelectedColor - (string) Link color of the selected page
+
+## Example
+```
+{
+  "pageLinking": [
+    {
+      "label": "Women",
+      "categoryId": "123",
+      "path": "/"
+    },
+    {
+      "label": "Men",
+      "categoryId": "456",
+      "path": "/page/men"
+    },
+    {
+      "label": "Kids",
+      "categoryId": "789",
+      "path": "/page/kids"
+    }
+  ],
+  "linkColor": "#bcbcbc",
+  "linkSelectedColor": "#45818e"
+}
+```
 
 ## About Shopgate
 
