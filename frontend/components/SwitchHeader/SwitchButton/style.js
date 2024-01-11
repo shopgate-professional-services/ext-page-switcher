@@ -1,8 +1,7 @@
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/pwa-common/helpers/config';
-import getConfig from '../../../helpers/getConfig';
+import { linkColor, linkSelectedColor } from '../../../config';
 
-const { linkColor, linkSelectedColor } = getConfig();
 const { colors } = themeConfig;
 
 const button = css({

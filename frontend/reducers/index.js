@@ -1,6 +1,8 @@
 import {
-  SET_SWITCH_SELECTION,
-  ERROR_SWITCH_SELECTION,
+  REQUEST_SELECTION,
+  RECEIVE_SELECTION,
+  SET_SELECTION,
+  ERROR_SELECTION,
 } from '../constants';
 
 /**
@@ -14,15 +16,28 @@ const SwitchSelection = (
   action
 ) => {
   switch (action.type) {
-    case SET_SWITCH_SELECTION:
+    case REQUEST_SELECTION:
+      return {
+        ...state,
+        loading: true,
+        error: null,
+      };
+    case RECEIVE_SELECTION:
+      return {
+        ...state,
+        loading: false,
+        selection: action.selection,
+      };
+    case SET_SELECTION:
       return {
         ...state,
         selection: action.selection,
       };
-    case ERROR_SWITCH_SELECTION:
+    case ERROR_SELECTION:
       return {
         ...state,
-        selection: {},
+        loading: false,
+        error: {},
       };
     default:
       return state;

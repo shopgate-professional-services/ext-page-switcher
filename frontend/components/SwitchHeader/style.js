@@ -1,8 +1,8 @@
 import { css } from 'glamor';
 
 const container = css({
-  margin: '13.5px 2px auto auto',
-  maxHeight: '44px',
+  display: 'flex',
+  alignItems: 'center',
 });
 
 const switchMenu = css({

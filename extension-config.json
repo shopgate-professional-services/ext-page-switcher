@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.5",
   "id": "@shopgate-project/page-switcher",
   "components": [
     {
@@ -78,7 +78,7 @@
       "default": "",
       "params": {
         "type": "text",
-        "label": "Color of the selected link/page"
+        "label": "Color of the selected link"
       }
     }
   }

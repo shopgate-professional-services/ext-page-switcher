@@ -1,22 +1,5 @@
 import { connect } from 'react-redux';
-import { historyPush } from '@shopgate/pwa-common/actions/router'; // added
-import {
-  makeGetIsSwitchVisible,
-  getSelection,
-} from '../../selectors';
-import { makeUpdateSelection } from '../../actions';
-
-/**
- * Maps the contents of the state to the component props.
- * @param {Function} dispatch The dispatch method from the store.
- * @return {Object}
- */
-const mapDispatchToProps = dispatch => ({
-  openPage: pathname => dispatch(historyPush({
-    pathname,
-  })),
-  setSelection: path => dispatch(makeUpdateSelection(path)),
-});
+import { makeGetIsSwitchVisible, getSelection } from '../../selectors';
 
 /**
  * Maps the contents of the state to the component props.
@@ -32,4 +15,4 @@ const makeMapStateToProps = () => {
   });
 };
 
-export default connect(makeMapStateToProps, mapDispatchToProps);
+export default connect(makeMapStateToProps, null);

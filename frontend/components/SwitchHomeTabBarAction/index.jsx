@@ -5,17 +5,17 @@ import connect from './connector';
 
 /**
  * The SwitchHomeTabBarAction component
- * If a page is selected, the home icon is highlighted.
+ * If a switch page is selected, the home icon is highlighted
  * @returns {JSX}
  */
-const SwitchHomeTabBarAction = ({ isVisible, children }) => (
-  isVisible ? (
+const SwitchHomeTabBarAction = ({ isSwitchVisible, children }) => (
+  isSwitchVisible ? (
     React.cloneElement(children, { isHighlighted: true })
   ) : children
 );
 
 SwitchHomeTabBarAction.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
+  isSwitchVisible: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };
 

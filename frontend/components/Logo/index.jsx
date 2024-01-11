@@ -9,8 +9,8 @@ import connect from './connector';
  * The Logo component.
  * @return {JSX}
  */
-const Logo = ({ isVisible, children }) => (
-  isVisible ? (
+const Logo = ({ isSwitchVisible, children }) => (
+  isSwitchVisible ? (
     <div className={`${styles.container} engage__logo`}>
       <img className={styles.image} src={appConfig.logo} alt={appConfig.shopName} />
     </div>
@@ -18,7 +18,7 @@ const Logo = ({ isVisible, children }) => (
 );
 
 Logo.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
+  isSwitchVisible: PropTypes.bool.isRequired,
   children: PropTypes.node,
 };
 

@@ -12,7 +12,7 @@ const makeMapStateToProps = () => {
   const getIsSwitchVisible = makeGetIsSwitchVisible();
 
   return (state, props) => ({
-    isVisible: getIsSwitchVisible(state, props),
+    isSwitchVisible: getIsSwitchVisible(state, props),
   });
 };
 

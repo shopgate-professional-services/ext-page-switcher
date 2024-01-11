@@ -12,13 +12,18 @@ export const makeGetIsSwitchVisible = () => createSelector(
 );
 
 /**
+ * Get the Redux sub-state of the extension
+ * @param {Object} state Redux state
+ * @returns {Function}
+ */
+export const getExtensionState = state => state?.extensions[REDUX_NAMESPACE_SELECTION];
+
+/**
  * Returns the selection
  * @param {Object} state .
  * @return {Object}
  */
-export const getSelection = (state) => {
-  if (!state.extensions[REDUX_NAMESPACE_SELECTION]?.selection) {
-    return {};
-  }
-  return state.extensions[REDUX_NAMESPACE_SELECTION].selection;
-};
+export const getSelection = createSelector(
+  getExtensionState,
+  extensionState => extensionState?.selection || {}
+);

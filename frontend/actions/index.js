@@ -1,18 +1,39 @@
 import { PipelineRequest } from '@shopgate/engage/core';
 import {
-  setSwitchSelection,
-  errorSwitchSelection,
+  requestSelection,
+  receiveSelection,
+  setSelection,
+  errorSelection,
 } from '../action-creators';
 
 /**
- * Get and update selection
- * @param {*} selection .
- * @returns {Object}
+ * Get start page selection
+ * @return {Object}
  */
-export const makeUpdateSelection = selection => dispatch => new PipelineRequest('shopgate-project.updateSelection')
-  .setInput({ selection })
-  .dispatch()
-  .then(({ updatedSelection }) => {
-    dispatch(setSwitchSelection(updatedSelection));
-  })
-  .catch(error => dispatch(errorSwitchSelection(error)));
+export const getStartpage = () => async (dispatch) => {
+  dispatch(requestSelection());
+
+  try {
+    const { selection } = await new PipelineRequest('shopgate-project.getSelection').dispatch();
+    dispatch(receiveSelection(selection));
+  } catch (error) {
+    dispatch(errorSelection(error));
+  }
+};
+
+/**
+ * Update selection
+ * @param {*} newSelection .
+ * @return {Object}
+ */
+export const updateSelection = newSelection => async (dispatch) => {
+  try {
+    await new PipelineRequest('shopgate-project.setSelection')
+      .setInput({ newSelection })
+      .dispatch();
+
+    dispatch(setSelection(newSelection));
+  } catch (error) {
+    dispatch(errorSelection(error));
+  }
+};

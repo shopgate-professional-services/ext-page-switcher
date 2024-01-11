@@ -1,6 +1,6 @@
 import {
   main$,
-  appDidStart$,
+  appWillStart$,
   navigate$,
   historyPush,
   getCurrentRoute,
@@ -8,17 +8,19 @@ import {
 } from '@shopgate/engage/core';
 import { logger } from '@shopgate/pwa-core/helpers';
 import { getSelection } from '../selectors';
-import { makeUpdateSelection } from '../actions';
+import { getStartpage, updateSelection } from '../actions';
+import { SET_SELECTION } from '../constants';
 
 export default (subscribe) => {
-  const setSwitchSelection$ = main$.filter(({ action }) => action.type === 'SET_SWITCH_SELECTION');
   const indexDidEnter$ = navigate$.filter(({ action }) => action.params.pathname === INDEX_PATH);
+  const setSwitchSelection$ = main$.filter(({ action }) => action.type === SET_SELECTION);
 
   subscribe(indexDidEnter$, ({ dispatch, getState }) => {
     const state = getState();
     const selection = getSelection(state);
     const route = getCurrentRoute(state);
 
+    // home button redirects to selection
     if (selection.path !== route.pathname) {
       dispatch(historyPush({
         pathname: selection.path,
@@ -34,13 +36,14 @@ export default (subscribe) => {
     }));
   });
 
-  subscribe(appDidStart$, ({ dispatch, getState }) => {
-    const selection = getSelection(getState());
-
+  subscribe(appWillStart$, async ({ dispatch, getState }) => {
     try {
-      dispatch(makeUpdateSelection(selection));
+      await dispatch(getStartpage());
+      const selection = getSelection(getState());
+
+      dispatch(updateSelection(selection));
     } catch (e) {
-      logger.error('Could not update selection.', e);
+      logger.error('Could not update start page selection.', e);
     }
   });
 };

@@ -1,9 +1,9 @@
-import getConfig from './helpers/getConfig';
+import { pageLinking } from './config';
 
-const { pageLinking } = getConfig();
-
-export const SET_SWITCH_SELECTION = 'SET_SWITCH_SELECTION';
-export const ERROR_SWITCH_SELECTION = 'ERROR_SWITCH_SELECTION';
+export const REQUEST_SELECTION = 'REQUEST_SELECTION';
+export const RECEIVE_SELECTION = 'RECEIVE_SELECTION';
+export const SET_SELECTION = 'SET_SELECTION';
+export const ERROR_SELECTION = 'ERROR_SELECTION';
 
 export const SWITCH_WHITELIST = pageLinking.map(page => page.path);
 

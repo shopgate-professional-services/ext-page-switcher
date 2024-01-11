@@ -1,48 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withRoute } from '@shopgate/engage/core';
-import getConfig from '../../helpers/getConfig';
 import styles from './style';
 import connect from './connector';
 import SwitchButton from './SwitchButton';
-
-const { pageLinking } = getConfig();
+import { pageLinking } from '../../config';
 
 /**
  * The SwitchHeader component
+ * @param {Object} props The component props.
+ * @returns {JSX}
  */
-class SwitchHeader extends Component {
-  static propTypes = {
-    isVisible: PropTypes.bool.isRequired,
-    selection: PropTypes.shape().isRequired,
-  };
+const SwitchHeader = ({ isVisible, selection, children }) => (
+  isVisible ? (
+    <div className={styles.container}>
+      <ul className={styles.switchMenu}>
+        { pageLinking.map(link => (
+          <li key={link.label} className={styles.menuItem}>
+            <SwitchButton isActive={selection.path === link.path} link={link} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : children
+);
 
-  static defaultProps = {};
+SwitchHeader.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  selection: PropTypes.shape().isRequired,
+  children: PropTypes.node,
+};
 
-  /**
-   * The render method
-   * @return {JSX}
-   */
-  render() {
-    // create menu items from config
-    const switchMenuItems = pageLinking.map((link) => {
-      const isActive = this.props.selection.path === link.path;
-
-      return (
-        <li key={link.label} className={`${styles.menuItem} ${styles.noSelectStyle}`}>
-          <SwitchButton isActive={isActive} link={link} />
-        </li>
-      );
-    }, this);
-
-    return this.props.isVisible && (
-      <div className={styles.container}>
-        <ul className={styles.switchMenu}>
-          { switchMenuItems }
-        </ul>
-      </div>
-    );
-  }
-}
+SwitchHeader.defaultProps = {
+  children: null,
+};
 
 export default withRoute(connect(SwitchHeader), { prop: 'route' });
