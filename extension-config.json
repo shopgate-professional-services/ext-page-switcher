@@ -41,23 +41,7 @@
     "pageLinking": {
       "type": "admin",
       "destination": "both",
-      "default": [
-        {
-          "label": "Women",
-          "categoryId": "123",
-          "path": "/"
-        },
-        {
-          "label": "Men",
-          "categoryId": "456",
-          "path": "/page/men"
-        },
-        {
-          "label": "Kids",
-          "categoryId": "789",
-          "path": "/page/kids"
-        }
-      ],
+      "default": [],
       "params": {
         "type": "json",
         "label": "Page linking"
