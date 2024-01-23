@@ -10,11 +10,11 @@ import {
  * Get start page selection
  * @return {Object}
  */
-export const getStartpage = () => async (dispatch) => {
+export const fetchSelection = () => async (dispatch) => {
   dispatch(requestSelection());
 
   try {
-    const { selection } = await new PipelineRequest('shopgate-project.getSelection').dispatch();
+    const { selection } = await new PipelineRequest('shopgate-project.page-switcher.getSelection').dispatch();
     dispatch(receiveSelection(selection));
   } catch (error) {
     dispatch(errorSelection(error));
@@ -28,7 +28,7 @@ export const getStartpage = () => async (dispatch) => {
  */
 export const updateSelection = newSelection => async (dispatch) => {
   try {
-    await new PipelineRequest('shopgate-project.setSelection')
+    await new PipelineRequest('shopgate-project.page-switcher.setSelection')
       .setInput({ newSelection })
       .dispatch();
 

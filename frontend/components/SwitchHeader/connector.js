@@ -15,4 +15,4 @@ const makeMapStateToProps = () => {
   });
 };
 
-export default connect(makeMapStateToProps, null);
+export default connect(makeMapStateToProps);

@@ -6,9 +6,8 @@ import {
   getCurrentRoute,
   INDEX_PATH,
 } from '@shopgate/engage/core';
-import { logger } from '@shopgate/pwa-core/helpers';
 import { getSelection } from '../selectors';
-import { getStartpage, updateSelection } from '../actions';
+import { fetchSelection, updateSelection } from '../actions';
 import { SET_SELECTION } from '../constants';
 
 export default (subscribe) => {
@@ -37,13 +36,9 @@ export default (subscribe) => {
   });
 
   subscribe(appWillStart$, async ({ dispatch, getState }) => {
-    try {
-      await dispatch(getStartpage());
-      const selection = getSelection(getState());
+    await dispatch(fetchSelection());
+    const selection = getSelection(getState());
 
-      dispatch(updateSelection(selection));
-    } catch (e) {
-      logger.error('Could not update start page selection.', e);
-    }
+    dispatch(updateSelection(selection));
   });
 };

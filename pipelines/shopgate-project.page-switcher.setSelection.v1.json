@@ -1,7 +1,7 @@
 {
   "version": "1",
   "pipeline": {
-    "id": "shopgate-project.setSelection.v1",
+    "id": "shopgate-project.page-switcher.setSelection.v1",
     "public": true,
     "input": [
       {

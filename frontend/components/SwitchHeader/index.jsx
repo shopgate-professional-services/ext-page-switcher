@@ -19,7 +19,7 @@ const SwitchHeader = ({ isVisible, selection, children }) => (
           <li key={link.label} className={styles.menuItem}>
             <SwitchButton isActive={selection.path === link.path} link={link} />
           </li>
-        ))}
+        )) }
       </ul>
     </div>
   ) : children

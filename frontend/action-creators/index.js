@@ -14,7 +14,7 @@ export const requestSelection = () => ({
 });
 
 /**
- * Recieve selection
+ * Receive selection
  * @param {Object} selection .
  * @return {Object}
  */
