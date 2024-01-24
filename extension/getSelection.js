@@ -5,10 +5,10 @@ module.exports = async (context) => {
     // get selection from cache
     const cachedSelection = await context.storage.device.get('selection');
     const isConfigured = context.config.pageLinking.some(
-      ({ path }) => path === cachedSelection?.path
+      ({ path }) => (cachedSelection ? path === cachedSelection.path : false)
     );
 
-    // first start or the cached selection is no longer configured
+    // first start or the cached selection is not configured
     if (!cachedSelection || !isConfigured) {
       selection = context.config.pageLinking.find(({ path }) => path === '/');
 
@@ -20,11 +20,9 @@ module.exports = async (context) => {
           path: '/',
         };
       }
-
-      context.log.info('First start with the homepage from the config');
     } else {
       selection = cachedSelection;
-      context.log.info('New start with cached selection');
+      context.log.info('New app start with cached selection');
     }
 
     return { selection };
