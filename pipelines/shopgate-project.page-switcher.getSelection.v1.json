@@ -1,0 +1,28 @@
+{
+  "version": "1",
+  "pipeline": {
+    "id": "shopgate-project.page-switcher.getSelection.v1",
+    "public": true,
+    "input": [],
+    "output": [
+      {
+        "key": "selection",
+        "id": "1010"
+      }
+    ],
+    "steps": [
+      {
+        "type": "extension",
+        "id": "@shopgate-project/page-switcher",
+        "path": "@shopgate-project/page-switcher/getSelection.js",
+        "input": [],
+        "output": [
+          {
+            "key": "selection",
+            "id": "1010"
+          }
+        ]
+      }
+    ]
+  }
+}
