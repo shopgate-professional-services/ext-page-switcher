@@ -40,7 +40,7 @@
   "configuration": {
     "pageLinking": {
       "type": "admin",
-      "destination": "both",
+      "destination": "frontend",
       "default": [],
       "params": {
         "type": "json",
