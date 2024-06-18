@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { getCurrentRoute } from '@shopgate/pwa-common/helpers/router';
+import { getCurrentRoute } from '@shopgate/engage/core';
 import { SWITCH_WHITELIST, REDUX_NAMESPACE_SELECTION } from '../constants';
 
 /**

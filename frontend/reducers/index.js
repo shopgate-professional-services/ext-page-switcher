@@ -1,9 +1,14 @@
+import { persistedReducers } from '@shopgate/engage/core';
+
 import {
   REQUEST_SELECTION,
   RECEIVE_SELECTION,
   SET_SELECTION,
   ERROR_SELECTION,
+  REDUX_NAMESPACE_SELECTION,
 } from '../constants';
+
+persistedReducers.set(`extensions.${REDUX_NAMESPACE_SELECTION}`);
 
 /**
  * SwitchSelection reducer.
