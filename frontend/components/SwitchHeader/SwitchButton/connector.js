@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
-import { updateSelection } from '../../../actions';
+import { setSelection } from '../../../action-creators';
 
 /**
  * Maps the contents of the state to the component props.
  * @param {Function} dispatch The dispatch method from the store.
  * @return {Object}
  */
-const mapDispatchToProps = dispatch => ({
-  setSelection: link => dispatch(updateSelection(link)),
-});
+const mapDispatchToProps = {
+  setSelection,
+};
 
 export default connect(null, mapDispatchToProps);
