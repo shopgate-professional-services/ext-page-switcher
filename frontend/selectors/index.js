@@ -28,10 +28,15 @@ export const getSelection = createSelector(
   getExtensionState,
   (extensionState) => {
     const cachedSelection = extensionState?.selection;
-    const isConfigured = pageLinking.some(({ path }) =>
-      (Object.keys(cachedSelection).length > 0
+    const isConfigured = pageLinking.some(({ path }) => {
+      if (!cachedSelection) {
+        return false;
+      }
+
+      return (Object.keys(cachedSelection).length > 0
         ? path === cachedSelection?.path
-        : false));
+        : false);
+    });
 
     // first start or the cached selection is not configured
     if (!cachedSelection || !isConfigured) {
