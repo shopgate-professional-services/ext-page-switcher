@@ -6,6 +6,7 @@ import {
   INDEX_PATH,
   appInitialization,
   redirects,
+  historyReset,
 } from '@shopgate/engage/core';
 import { getSelection } from '../selectors';
 import { SET_SELECTION } from '../constants';
@@ -22,7 +23,11 @@ export default (subscribe) => {
     });
   });
 
-  subscribe(appWillStart$, ({ getState }) => {
+  subscribe(appWillStart$, ({ getState, dispatch }) => {
+    window.sgHistoryReset = () => {
+      dispatch(historyReset());
+    };
+
     redirects.set(INDEX_PATH, () => {
       const selection = getSelection(getState());
 
