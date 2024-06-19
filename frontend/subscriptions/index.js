@@ -6,7 +6,6 @@ import {
   INDEX_PATH,
   appInitialization,
   redirects,
-  hasSGJavaScriptBridge,
 } from '@shopgate/engage/core';
 import { getSelection } from '../selectors';
 import { SET_SELECTION } from '../constants';
@@ -18,10 +17,7 @@ export default (subscribe) => {
     appInitialization.set('ext-page-switcher', () => {
       const selection = getSelection(getState());
       if (selection?.path !== INDEX_PATH) {
-        // When running inside a real app, we need to prefix the url, since otherwise invalid
-        // urls could be created - trailing slashes are removed to guarantee valid paths.
-        const urlPrefix = hasSGJavaScriptBridge() ? `${window.location.href}`.replace(/\/+$/, '') : '';
-        window.history.replaceState({}, null, `${urlPrefix}${selection.path}`);
+        window.history.replaceState({}, null, selection.path);
       }
     });
   });
