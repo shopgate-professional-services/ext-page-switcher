@@ -2,7 +2,7 @@ import {
   main$,
   appWillStart$,
   appWillInit$,
-  historyReplace,
+  historyPush,
   INDEX_PATH,
   appInitialization,
   redirects,
@@ -51,7 +51,7 @@ export default (subscribe) => {
   subscribe(setSwitchSelection$, ({ dispatch, getState }) => {
     const selection = getSelection(getState());
 
-    dispatch(historyReplace({
+    dispatch(historyPush({
       pathname: selection.path,
     }));
   });
