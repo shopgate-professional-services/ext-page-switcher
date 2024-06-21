@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRoute } from '@shopgate/engage/core';
-import appConfig from '@shopgate/pwa-common/helpers/config';
+import { appConfig } from '@shopgate/engage';
 import styles from './style';
 import connect from './connector';
 

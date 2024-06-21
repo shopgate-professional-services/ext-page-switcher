@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
-import { getCurrentRoute } from '@shopgate/pwa-common/helpers/router';
+import { getCurrentRoute } from '@shopgate/engage/core';
 import { SWITCH_WHITELIST, REDUX_NAMESPACE_SELECTION } from '../constants';
+import { pageLinking } from '../config';
 
 /**
  * Creates a selector that determines whether the switch should be visible
@@ -25,5 +26,34 @@ export const getExtensionState = state => state?.extensions[REDUX_NAMESPACE_SELE
  */
 export const getSelection = createSelector(
   getExtensionState,
-  extensionState => extensionState?.selection || {}
+  (extensionState) => {
+    const cachedSelection = extensionState?.selection;
+    const isConfigured = pageLinking.some(({ path }) => {
+      if (!cachedSelection) {
+        return false;
+      }
+
+      return (Object.keys(cachedSelection).length > 0
+        ? path === cachedSelection?.path
+        : false);
+    });
+
+    // first start or the cached selection is not configured
+    if (!cachedSelection || !isConfigured) {
+      let selection = pageLinking.find(({ path }) => path === '/');
+
+      // missing or wrong config
+      if (!selection) {
+        selection = {
+          label: null,
+          categoryId: null,
+          path: '/',
+        };
+      }
+
+      return selection;
+    }
+
+    return extensionState?.selection || {};
+  }
 );
