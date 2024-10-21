@@ -12,7 +12,11 @@ import connect from './connector';
 const Logo = ({ isSwitchVisible, children }) => (
   isSwitchVisible ? (
     <div className={`${styles.container} engage__logo`}>
-      <img className={styles.image} src={appConfig.logo} alt={appConfig.shopName} />
+      <img
+        className={styles.image}
+        src={appConfig.logo || appConfig.logoFallback}
+        alt={appConfig.shopName}
+      />
     </div>
   ) : children
 );

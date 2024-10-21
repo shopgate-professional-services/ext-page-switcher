@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2024-10-21
+### Added
+- Added compatibility with upcoming PWA version 7.20.0
+
 ## [1.0.0] - 2023-11-10
 ### Added
 - Adds a page switcher to the header
