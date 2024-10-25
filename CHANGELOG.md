@@ -2,9 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.1.0] - 2024-10-21
+## 1.2.0 - 2024-10-21
 ### Added
 - Added compatibility with upcoming PWA version 7.20.0
+
+## 1.1.0 - 2024-06-21
+### Added
+- Fixed redirection behavior when starting the app.
 
 ## [1.0.0] - 2023-11-10
 ### Added
