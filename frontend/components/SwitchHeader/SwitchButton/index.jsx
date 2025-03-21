@@ -18,6 +18,7 @@ const SwitchButton = ({ isActive, link, setSelection }) => {
       type="button"
       onClick={handleClick}
       className={isActive ? styles.activeButton : styles.button}
+      aria-current={isActive ? link.label : undefined }
     >
       {link.label}
     </button>

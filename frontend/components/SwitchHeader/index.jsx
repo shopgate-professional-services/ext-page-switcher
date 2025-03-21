@@ -13,7 +13,7 @@ import { pageLinking, showSwitcherInHeader } from '../../config';
  */
 const SwitchHeader = ({ isVisible, selection, children }) => (
   showSwitcherInHeader && isVisible ? (
-    <div className={styles.container}>
+    <nav className={styles.container}>
       <ul className={styles.switchMenu}>
         {pageLinking
           .filter(link => !link.externalUrl)
@@ -23,7 +23,7 @@ const SwitchHeader = ({ isVisible, selection, children }) => (
             </li>
           ))}
       </ul>
-    </div>
+    </nav>
   ) : children
 );
 

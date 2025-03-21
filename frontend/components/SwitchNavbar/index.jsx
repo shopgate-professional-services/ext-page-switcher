@@ -19,7 +19,7 @@ const SwitchNavbar = ({ isVisible, selection, children }) => {
 
   return (
     <ScrollHeader className={styles.sticky} hideOnScroll={hideOnScroll}>
-      <div className={styles.container}>
+      <nav className={styles.container}>
         <ul className={styles.switchMenu}>
           {pageLinking.map(link => (
             <li key={link.label} className={styles.menuItem}>
@@ -28,6 +28,8 @@ const SwitchNavbar = ({ isVisible, selection, children }) => {
                   href={link.externalUrl}
                   state={{ target: '_blank' }}
                   className={styles.link}
+                  aria-label={link.label}
+                  tabIndex={0}
                 >
                   {link.label}
                 </Link>
@@ -37,7 +39,7 @@ const SwitchNavbar = ({ isVisible, selection, children }) => {
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
       {children}
     </ScrollHeader>
   );
