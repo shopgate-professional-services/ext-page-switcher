@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0-beta.1",
   "id": "@shopgate-project/page-switcher",
   "components": [
     {
@@ -7,6 +7,12 @@
       "type": "portals",
       "path": "frontend/components/SwitchHeader",
       "target": "app-bar.right"
+    },
+    {
+      "id": "SwitchNavbar",
+      "type": "portals",
+      "path": "frontend/components/SwitchNavbar",
+      "target": "view.content.before"
     },
     {
       "id": "Logo",
@@ -41,7 +47,26 @@
     "pageLinking": {
       "type": "admin",
       "destination": "frontend",
-      "default": [],
+      "default": [
+        {
+          "path": "/",
+          "label": "Women",
+          "categoryId": "123",
+          "externalUrl": ""
+        },
+        {
+          "path": "/page/men",
+          "label": "Men",
+          "categoryId": "456",
+          "externalUrl": ""
+        },
+        {
+          "path": "",
+          "label": "Shopgate",
+          "categoryId": "",
+          "externalUrl": "https://www.shopgate.com"
+        }
+      ],
       "params": {
         "type": "json",
         "label": "Page linking"
@@ -59,10 +84,46 @@
     "linkSelectedColor": {
       "type": "admin",
       "destination": "frontend",
-      "default": "",
+      "default": "#000",
       "params": {
         "type": "text",
-        "label": "Color of the selected link"
+        "label": "Color of the selected page link"
+      }
+    },
+    "underlineOnActive": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": false,
+      "params": {
+        "type": "checkbox",
+        "label": "Determines whether the active link is underlined"
+      }
+    },
+    "switcherBarBgColor": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "#fff",
+      "params": {
+        "type": "text",
+        "label": "Background color of the switcher bar (when in after header mode)"
+      }
+    },
+    "showSwitcherInHeader": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "checkbox",
+        "label": "Determines whether the switcher is displayed inside the header or positioned below it"
+      }
+    },
+    "hideOnScroll": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "checkbox",
+        "label": "Hide the switcher bar when scrolling (when in after header mode)"
       }
     }
   }

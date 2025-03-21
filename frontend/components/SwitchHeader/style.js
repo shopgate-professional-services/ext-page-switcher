@@ -24,6 +24,12 @@ const menuItem = css({
     borderLeft: '1px solid #ccc',
     height: '50%',
   },
+  ':first-child': {
+    marginLeft: '10px',
+  },
+  ':last-child': {
+    marginRight: '10px',
+  },
 });
 
 export default {
