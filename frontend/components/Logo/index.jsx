@@ -4,13 +4,14 @@ import { withRoute } from '@shopgate/engage/core';
 import { appConfig } from '@shopgate/engage';
 import styles from './style';
 import connect from './connector';
+import { showSwitcherInHeader } from '../../config';
 
 /**
  * The Logo component.
  * @return {JSX}
  */
 const Logo = ({ isSwitchVisible, children }) => (
-  isSwitchVisible ? (
+  showSwitcherInHeader && isSwitchVisible ? (
     <div className={`${styles.container} engage__logo`}>
       <img
         className={styles.image}
