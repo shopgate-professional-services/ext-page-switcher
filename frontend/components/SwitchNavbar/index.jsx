@@ -8,9 +8,10 @@ import SwitchButton from '../SwitchHeader/SwitchButton';
 import { pageLinking, showSwitcherInHeader, hideOnScroll } from '../../config';
 
 /**
- * The SwitchHeader component
- * @param {Object} props The component props.
- * @returns {JSX}
+ * The SwitchNavbar component
+ * @param {boolean} props.isVisible Indicates whether the navbar is visible.
+ * @param {Object} props.selection The current selection object.
+ * @returns {JSX.Element}
  */
 const SwitchNavbar = ({ isVisible, selection, children }) => {
   if (showSwitcherInHeader || !isVisible) {
@@ -28,7 +29,6 @@ const SwitchNavbar = ({ isVisible, selection, children }) => {
                   href={link.externalUrl}
                   state={{ target: '_blank' }}
                   className={styles.link}
-                  aria-label={link.label}
                   tabIndex={0}
                 >
                   {link.label}
