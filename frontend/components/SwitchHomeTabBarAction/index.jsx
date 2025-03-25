@@ -4,9 +4,11 @@ import { withRoute } from '@shopgate/engage/core';
 import connect from './connector';
 
 /**
- * The SwitchHomeTabBarAction component
- * If a switch page is selected, the home icon is highlighted
- * @returns {JSX}
+ * The SwitchHomeTabBarAction component.
+ * If a switch page is selected, the home icon is highlighted.
+ * @param {Object} props The component props.
+ * @param {boolean} props.isSwitchVisible Determines if the home icon should be highlighted.
+ * @returns {JSX.Element}
  */
 const SwitchHomeTabBarAction = ({ isSwitchVisible, children }) => (
   isSwitchVisible ? (

@@ -13,7 +13,7 @@ const button = css({
   ':focus': {
     outline: 'none !important',
   },
-});
+}).toString();
 
 const activeButton = css({
   display: 'block',
@@ -24,7 +24,7 @@ const activeButton = css({
   ':focus': {
     outline: 'none !important',
   },
-});
+}).toString();
 
 export default {
   button,

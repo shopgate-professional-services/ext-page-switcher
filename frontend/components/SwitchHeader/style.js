@@ -3,14 +3,14 @@ import { css } from 'glamor';
 const container = css({
   display: 'flex',
   alignItems: 'center',
-});
+}).toString();
 
 const switchMenu = css({
   listStyle: 'none',
   padding: 0,
   margin: 0,
   display: 'flex',
-});
+}).toString();
 
 const menuItem = css({
   marginRight: '10px',
@@ -30,7 +30,7 @@ const menuItem = css({
   ':last-child': {
     marginRight: '10px',
   },
-});
+}).toString();
 
 export default {
   switchMenu,

@@ -2,7 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.3.0] - 2025-03-21
+## [1.3.1] - 2025-03-25
+### Fixed
+- Screenreader focus on active button
+- Logo is still displayed when changing pages
+
+## [1.3.0] - 2025-03-25
 ### Added
 - Added navigation bar, which appears below the header
 - Improved accessibility

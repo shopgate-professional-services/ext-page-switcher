@@ -10,7 +10,7 @@ const container = css({
   justifyContent: 'center',
   width: '100%',
   backgroundColor: switcherBarBgColor,
-});
+}).toString();
 
 const switchMenu = css({
   listStyle: 'none',
@@ -20,7 +20,7 @@ const switchMenu = css({
   flexWrap: 'wrap',
   justifyContent: 'center',
   alignItems: 'center',
-});
+}).toString();
 
 const menuItem = css({
   marginRight: '10px',
@@ -44,7 +44,7 @@ const menuItem = css({
     marginRight: '5px',
   },
   boxSizing: 'border-box',
-});
+}).toString();
 
 const link = css({
   display: 'block',
@@ -55,14 +55,14 @@ const link = css({
   ':focus': {
     outline: 'none !important',
   },
-});
+}).toString();
 
 const sticky = css({
   position: 'sticky',
   top: 0,
   left: 0,
   zIndex: 100,
-});
+}).toString();
 
 export default {
   switchMenu,
