@@ -6,35 +6,47 @@ This extension adds a page switcher to the standard header. The selected page wi
 
 Set the following value in your Shopgate Connect Admin:
 
-  * pageLinking - (json) Array
-    * label - (string) Link label
-    * path - (string) Path to the linked page
-    * categoryId - (string) The page represents this category
-  * linkColor - (string) Link color
-  * linkSelectedColor - (string) Link color of the selected page
+  * `pageLinking` - (json) Array
+    * `label` - (string) The text displayed for the link.
+    * `path` - (string) The internal path to the linked page.
+    * `categoryId` - (string) The linked page belongs to this category.
+    * `externalUrl` - (string) The URL to an external page. If specified, this URL is used instead of `path`.
+  * `linkColor` - (string) Color of links.
+  * `linkSelectedColor` - (string) Color of the selected link.
+  * `underlineOnActive` - (boolean) If `true`, the active link is underlined.
+  * `showSwitcherInHeader` - (boolean) If `true`, the switcher is displayed inside the header - otherwise, it is positioned below.
+  * `switcherBarBgColor` - (string) Background color of the switcher bar (when in after header mode).
+  * `hideOnScroll` - (boolean) If `true`, the switcher bar hides when scrolling (when in after header mode).
 
 ## Example
 ```
 {
   "pageLinking": [
     {
+      "path": "/",
       "label": "Women",
       "categoryId": "123",
-      "path": "/"
+      "externalUrl": ""
     },
     {
+      "path": "/page/men",
       "label": "Men",
       "categoryId": "456",
-      "path": "/page/men"
+      "externalUrl": ""
     },
     {
-      "label": "Kids",
-      "categoryId": "789",
-      "path": "/page/kids"
+      "path": "",
+      "label": "Shopgate",
+      "categoryId": "",
+      "externalUrl": "https://www.shopgate.com"
     }
   ],
-  "linkColor": "#bcbcbc",
-  "linkSelectedColor": "#45818e"
+  "linkColor": "",
+  "linkSelectedColor": "#000",
+  "underlineOnActive": false,
+  "navBarBgColor": "#fff",
+  "showSwitcherInHeader": true,
+  "hideOnScroll": true
 }
 ```
 

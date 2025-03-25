@@ -4,13 +4,15 @@ import { withRoute } from '@shopgate/engage/core';
 import { appConfig } from '@shopgate/engage';
 import styles from './style';
 import connect from './connector';
+import { showSwitcherInHeader } from '../../config';
 
 /**
- * The Logo component.
- * @return {JSX}
+ * The Logo component renders the logo if the switch is visible.
+ * @param {boolean} props.isSwitchVisible Indicates whether the switch is visible or not.
+ * @returns {JSX.Element}
  */
 const Logo = ({ isSwitchVisible, children }) => (
-  isSwitchVisible ? (
+  showSwitcherInHeader && isSwitchVisible ? (
     <div className={`${styles.container} engage__logo`}>
       <img
         className={styles.image}

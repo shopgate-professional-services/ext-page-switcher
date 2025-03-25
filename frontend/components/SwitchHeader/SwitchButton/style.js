@@ -1,12 +1,12 @@
 import { css } from 'glamor';
 import { themeConfig } from '@shopgate/engage';
-import { linkColor, linkSelectedColor } from '../../../config';
+import { linkColor, linkSelectedColor, underlineOnActive } from '../../../config';
 
 const { colors } = themeConfig;
 
 const button = css({
   display: 'block',
-  padding: '1px 6px 1px 6px',
+  padding: '1px 6px',
   textDecoration: 'none',
   color: linkColor || colors.gray,
   fontSize: '14px',
@@ -17,8 +17,8 @@ const button = css({
 
 const activeButton = css({
   display: 'block',
-  padding: '1px 6px 1px 6px',
-  textDecoration: 'none',
+  padding: '1px 6px',
+  textDecoration: underlineOnActive ? 'underline' : 'none',
   color: linkSelectedColor || colors.cta,
   fontSize: '14px',
   ':focus': {

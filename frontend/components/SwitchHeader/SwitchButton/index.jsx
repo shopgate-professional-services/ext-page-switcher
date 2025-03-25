@@ -5,10 +5,15 @@ import styles from './style';
 
 /**
  * SwitchButton component
- * @param {Object} props The component props.
- * @param {JSX} .
+ * @param {boolean} props.isActive Indicates if the button is active or not.
+ * @param {Object} props.link The link object that contains the label and other properties.
+ * @param {Function} props.setSelection Function to handle the selection change.
+ * @returns {JSX.Element}
  */
 const SwitchButton = ({ isActive, link, setSelection }) => {
+  /**
+   * Sets the current page selection.
+   */
   const handleClick = () => {
     setSelection(link);
   };
@@ -18,6 +23,7 @@ const SwitchButton = ({ isActive, link, setSelection }) => {
       type="button"
       onClick={handleClick}
       className={isActive ? styles.activeButton : styles.button}
+      aria-current={isActive ? link.label : undefined}
     >
       {link.label}
     </button>
