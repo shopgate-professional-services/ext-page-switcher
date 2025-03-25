@@ -8,7 +8,7 @@ const container = css({
   alignItems: 'center',
   display: 'flex',
   flexGrow: 1,
-});
+}).toString();
 
 const image = css({
   margin: '0 auto',
@@ -18,7 +18,7 @@ const image = css({
   overflow: 'hidden',
   textOverflow: 'ellipsis',
   whiteSpace: 'nowrap',
-});
+}).toString();
 
 export default {
   container,

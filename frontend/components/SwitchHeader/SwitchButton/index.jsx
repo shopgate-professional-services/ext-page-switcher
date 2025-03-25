@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import connect from './connector';
 import styles from './style';
@@ -11,6 +11,8 @@ import styles from './style';
  * @returns {JSX.Element}
  */
 const SwitchButton = ({ isActive, link, setSelection }) => {
+  const buttonRef = useRef(null);
+
   /**
    * Sets the current page selection.
    */
@@ -18,12 +20,19 @@ const SwitchButton = ({ isActive, link, setSelection }) => {
     setSelection(link);
   };
 
+  useEffect(() => {
+    if (isActive && buttonRef.current) {
+      buttonRef.current.focus();
+    }
+  }, [isActive]);
+
   return (
     <button
+      ref={buttonRef}
       type="button"
       onClick={handleClick}
       className={isActive ? styles.activeButton : styles.button}
-      aria-current={isActive ? link.label : undefined}
+      aria-current={isActive ? 'page' : undefined}
     >
       {link.label}
     </button>
