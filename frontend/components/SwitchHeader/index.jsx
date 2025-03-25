@@ -7,9 +7,12 @@ import SwitchButton from './SwitchButton';
 import { pageLinking, showSwitcherInHeader } from '../../config';
 
 /**
- * The SwitchHeader component
+ * The SwitchHeader component.
  * @param {Object} props The component props.
- * @returns {JSX}
+ * @param {boolean} props.isVisible Determines if the switcher should be displayed.
+ * @param {Object} props.selection The currently selected item.
+ * @param {string} props.selection.path The path of the selected item.
+ * @returns {JSX.Element}
  */
 const SwitchHeader = ({ isVisible, selection, children }) => (
   showSwitcherInHeader && isVisible ? (

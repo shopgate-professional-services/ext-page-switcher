@@ -3,8 +3,10 @@ import { withRoute } from '@shopgate/engage/core';
 import connect from './connector';
 
 /**
- * The HideBackArrow component
- * @returns {JSX}
+ * The HideBackArrow component.
+ * @param {Object} props The component props.
+ * @param {boolean} props.isSwitchVisible Determines if the back arrow should be hidden.
+ * @returns {JSX.Element|null}
  */
 const HideBackArrow = ({ isSwitchVisible, children }) => (
   // hiding the back arrow on pages where the switcher is visible

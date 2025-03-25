@@ -7,6 +7,7 @@ import connect from './connector';
 
 /**
  * The Logo component renders the logo if the switch is visible.
+ * @param {Object} props The component props.
  * @param {boolean} props.isSwitchVisible Indicates whether the switch is visible or not.
  * @returns {JSX.Element}
  */

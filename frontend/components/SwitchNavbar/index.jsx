@@ -8,7 +8,8 @@ import SwitchButton from '../SwitchHeader/SwitchButton';
 import { pageLinking, showSwitcherInHeader, hideOnScroll } from '../../config';
 
 /**
- * The SwitchNavbar component
+ * The SwitchNavbar component.
+ * @param {Object} props The component props.
  * @param {boolean} props.isVisible Indicates whether the navbar is visible.
  * @param {Object} props.selection The current selection object.
  * @returns {JSX.Element}
