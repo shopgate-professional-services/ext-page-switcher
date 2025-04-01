@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.4.0] - 2025-04-01
+### Changed
+- Category tree on browse page will adjust to the selected page and show the relevant child categories
+
 ## [1.3.1] - 2025-03-25
 ### Fixed
 - Screenreader focus on active button
