@@ -7,8 +7,11 @@ import {
   appInitialization,
   redirects,
 } from '@shopgate/engage/core';
+import { fetchCategory } from '@shopgate/engage/category';
+import { getCategoryChildren } from '@shopgate/pwa-common-commerce/category/selectors';
 import { getSelection } from '../selectors';
 import { SET_SELECTION } from '../constants';
+import { browseDidEnter$ } from '../streams';
 
 const baseUrlRegex = /https?:\/\/(?:(?:(?:[0-9]{1,3}\.){3}[0-9]{1,3}(?::[0-9]+)?)|(?:.+index.html))/gm;
 
@@ -54,6 +57,17 @@ export default (subscribe) => {
     dispatch(historyReplace({
       pathname: selection.path,
     }));
+  });
+
+  subscribe(browseDidEnter$, ({ dispatch, getState }) => {
+    const state = getState();
+    const selection = getSelection(state);
+    const { categoryId } = selection;
+    const childCategories = getCategoryChildren(state, { categoryId });
+
+    if (!childCategories) {
+      dispatch(fetchCategory(categoryId));
+    }
   });
 };
 

@@ -9,12 +9,21 @@ import connect from './connector';
  * @param {Array} props.categories the categories for the category list
  * @returns {JSX.Element}
  */
-const BrowseCategoryList = ({ categories }) => (
-  <CategoryList categories={categories} />
-);
+const BrowseCategoryList = ({ categories }) => {
+  if (!categories) {
+    return null;
+  }
+  return (
+    <CategoryList categories={categories} />
+  );
+};
 
 BrowseCategoryList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape()),
+};
+
+BrowseCategoryList.defaultProps = {
+  categories: null,
 };
 
 export default connect(BrowseCategoryList);
