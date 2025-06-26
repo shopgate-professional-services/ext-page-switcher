@@ -11,6 +11,7 @@ Set the following value in your Shopgate Connect Admin:
     * `path` - (string) The internal path to the linked page.
     * `categoryId` - (string) The linked page belongs to this category.
     * `externalUrl` - (string) The URL to an external page. If specified, this URL is used instead of `path`.
+    * `icon` - (string) If specified, the switch button will be this icon.
   * `linkColor` - (string) Color of links.
   * `linkSelectedColor` - (string) Color of the selected link.
   * `underlineOnActive` - (boolean) If `true`, the active link is underlined.
@@ -26,19 +27,21 @@ Set the following value in your Shopgate Connect Admin:
       "path": "/",
       "label": "Women",
       "categoryId": "123",
-      "externalUrl": ""
+      "externalUrl": "",
+      "icon": "<svg XYZ></svg>",
     },
     {
       "path": "/page/men",
       "label": "Men",
       "categoryId": "456",
-      "externalUrl": ""
+      "externalUrl": "",
+      "icon": "<svg XYZ></svg>",
     },
     {
       "path": "",
       "label": "Shopgate",
       "categoryId": "",
-      "externalUrl": "https://www.shopgate.com"
+      "externalUrl": "https://www.shopgate.com",
     }
   ],
   "linkColor": "",

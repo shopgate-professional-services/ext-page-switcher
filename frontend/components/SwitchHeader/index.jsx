@@ -22,7 +22,11 @@ const SwitchHeader = ({ isVisible, selection, children }) => (
           .filter(link => !link.externalUrl)
           .map(link => (
             <li key={link.label} className={styles.menuItem}>
-              <SwitchButton isActive={selection.path === link.path} link={link} />
+              <SwitchButton
+                isActive={selection.path === link.path}
+                link={link}
+                icon={link.icon}
+              />
             </li>
           ))}
       </ul>

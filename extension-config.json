@@ -58,13 +58,15 @@
           "path": "/",
           "label": "Women",
           "categoryId": "123",
-          "externalUrl": ""
+          "externalUrl": "",
+          "icon": null
         },
         {
           "path": "/page/men",
           "label": "Men",
           "categoryId": "456",
-          "externalUrl": ""
+          "externalUrl": "",
+          "icon": null
         },
         {
           "path": "",
