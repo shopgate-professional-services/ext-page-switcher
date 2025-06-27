@@ -3,6 +3,7 @@ import { css } from 'glamor';
 const container = css({
   display: 'flex',
   alignItems: 'center',
+  zIndex: 1,
 }).toString();
 
 const switchMenu = css({
@@ -10,6 +11,11 @@ const switchMenu = css({
   padding: 0,
   margin: 0,
   display: 'flex',
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  height: '100%',
+  alignItems: 'center',
 }).toString();
 
 const menuItem = css({
