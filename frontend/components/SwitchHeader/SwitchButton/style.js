@@ -29,13 +29,17 @@ const activeButton = css({
 const activeSwitchButton = css({
   backgroundColor: colors.light,
   padding: '6px 18px',
-  color: colors.dark,
   borderRadius: '50px',
+  ' path': {
+    stroke: colors.dark,
+  },
 }).toString();
 
 const switchButton = css({
-  color: colors.shade9,
   borderRadius: '50px',
+  ' path': {
+    stroke: colors.shade9,
+  },
 }).toString();
 
 export default {

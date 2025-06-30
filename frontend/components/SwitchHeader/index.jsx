@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withRoute } from '@shopgate/engage/core';
+import classNames from 'classnames';
 import styles from './style';
 import connect from './connector';
 import SwitchButton from './SwitchButton';
@@ -17,11 +18,16 @@ import { pageLinking, showSwitcherInHeader, iconSwitch } from '../../config';
 const SwitchHeader = ({ isVisible, selection, children }) => (
   showSwitcherInHeader && isVisible ? (
     <nav className={styles.container}>
-      <ul className={iconSwitch ? styles.iconMenu : styles.switchMenu}>
+      <ul className={classNames(iconSwitch ? styles.iconMenu : styles.switchMenu, 'page-switcher__menu')}>
         {pageLinking
           .filter(link => !link.externalUrl)
           .map(link => (
-            <li key={link.label} className={iconSwitch ? styles.iconMenuItem : styles.menuItem}>
+            <li
+              key={link.label}
+              className={classNames(iconSwitch
+                ? styles.iconMenuItem
+                : styles.menuItem, 'page-switcher__menu-item')}
+            >
               <SwitchButton
                 isActive={selection.path === link.path}
                 link={link}

@@ -47,7 +47,7 @@ const iconMenu = css({
   height: '100%',
   alignItems: 'center',
   borderRadius: '50px',
-  backgroundColor: colors.shade7,
+  backgroundColor: colors.shade10,
 }).toString();
 
 const iconMenuItem = css({
