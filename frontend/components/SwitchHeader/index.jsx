@@ -4,7 +4,7 @@ import { withRoute } from '@shopgate/engage/core';
 import styles from './style';
 import connect from './connector';
 import SwitchButton from './SwitchButton';
-import { pageLinking, showSwitcherInHeader } from '../../config';
+import { pageLinking, showSwitcherInHeader, iconSwitch } from '../../config';
 
 /**
  * The SwitchHeader component.
@@ -17,15 +17,16 @@ import { pageLinking, showSwitcherInHeader } from '../../config';
 const SwitchHeader = ({ isVisible, selection, children }) => (
   showSwitcherInHeader && isVisible ? (
     <nav className={styles.container}>
-      <ul className={styles.switchMenu}>
+      <ul className={iconSwitch ? styles.iconMenu : styles.switchMenu}>
         {pageLinking
           .filter(link => !link.externalUrl)
           .map(link => (
-            <li key={link.label} className={styles.menuItem}>
+            <li key={link.label} className={iconSwitch ? styles.iconMenuItem : styles.menuItem}>
               <SwitchButton
                 isActive={selection.path === link.path}
                 link={link}
                 icon={link.icon}
+                isIconSwitch={iconSwitch}
               />
             </li>
           ))}

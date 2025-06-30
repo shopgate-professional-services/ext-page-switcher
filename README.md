@@ -6,6 +6,7 @@ This extension adds a page switcher to the standard header. The selected page wi
 
 Set the following value in your Shopgate Connect Admin:
 
+  * `iconSwitch` - (boolean) If `true` the page switcher will be an icon switch (configure the icons in pageLinking)
   * `pageLinking` - (json) Array
     * `label` - (string) The text displayed for the link.
     * `path` - (string) The internal path to the linked page.

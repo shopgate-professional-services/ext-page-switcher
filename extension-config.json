@@ -50,6 +50,15 @@
     }
   ],
   "configuration": {
+    "iconSwitch": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": false,
+      "params": {
+        "type": "boolean",
+        "label": "whether page switcher is icon switcher (configure icons in pageLinking)"
+      }
+    },
     "pageLinking": {
       "type": "admin",
       "destination": "frontend",

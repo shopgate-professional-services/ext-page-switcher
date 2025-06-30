@@ -10,13 +10,15 @@ import styles from './style';
  * @param {boolean} props.isActive Indicates if the button is active or not.
  * @param {Object} props.link The link object that contains the label and other properties.
  * @param {Function} props.setSelection Function to handle the selection change.
+ * @param {boolean} [props.isIconSwitch] Indicates if the button is an icon switch
  * @param {string} [props.icon] optional icon to show as switch
  * @returns {JSX.Element}
  */
 const SwitchButton = ({
-  isActive, link, setSelection, icon,
+  isActive, link, setSelection, icon, isIconSwitch,
 }) => {
   const buttonRef = useRef(null);
+  const switchButtonRef = useRef(null);
 
   /**
    * Sets the current page selection.
@@ -29,12 +31,20 @@ const SwitchButton = ({
     if (isActive && buttonRef.current) {
       buttonRef.current.focus();
     }
+    if (isActive && switchButtonRef.current) {
+      switchButtonRef.current.focus();
+    }
   }, [isActive]);
 
-  if (icon) {
+  if (isIconSwitch && icon) {
     return (
-      <button onClick={handleClick} type="button" ref={buttonRef}>
-        <Icon content={icon} />
+      <button
+        onClick={handleClick}
+        type="button"
+        ref={switchButtonRef}
+        className={isActive ? styles.activeSwitchButton : styles.switchButton}
+      >
+        <Icon content={icon} size={28} />
       </button>
     );
   }
@@ -57,10 +67,12 @@ SwitchButton.propTypes = {
   link: PropTypes.shape().isRequired,
   setSelection: PropTypes.func.isRequired,
   icon: PropTypes.string,
+  isIconSwitch: PropTypes.bool,
 };
 
 SwitchButton.defaultProps = {
   icon: null,
+  isIconSwitch: false,
 };
 
 SwitchButton.defaultProps = {};

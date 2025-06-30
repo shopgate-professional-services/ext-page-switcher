@@ -1,4 +1,7 @@
 import { css } from 'glamor';
+import { themeConfig } from '@shopgate/engage';
+
+const { colors } = themeConfig;
 
 const container = css({
   display: 'flex',
@@ -38,8 +41,25 @@ const menuItem = css({
   },
 }).toString();
 
+const iconMenu = css({
+  margin: '4px',
+  display: 'flex',
+  height: '100%',
+  alignItems: 'center',
+  borderRadius: '50px',
+  backgroundColor: colors.shade7,
+}).toString();
+
+const iconMenuItem = css({
+  margin: '0 4px',
+  display: 'flex',
+  alignItems: 'center',
+}).toString();
+
 export default {
   switchMenu,
   menuItem,
   container,
+  iconMenu,
+  iconMenuItem,
 };

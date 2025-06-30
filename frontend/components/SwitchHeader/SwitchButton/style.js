@@ -26,7 +26,21 @@ const activeButton = css({
   },
 }).toString();
 
+const activeSwitchButton = css({
+  backgroundColor: colors.light,
+  padding: '6px 18px',
+  color: colors.dark,
+  borderRadius: '50px',
+}).toString();
+
+const switchButton = css({
+  color: colors.shade9,
+  borderRadius: '50px',
+}).toString();
+
 export default {
   button,
   activeButton,
+  switchButton,
+  activeSwitchButton,
 };
