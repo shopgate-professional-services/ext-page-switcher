@@ -42,7 +42,7 @@ const menuItem = css({
 }).toString();
 
 const iconMenu = css({
-  margin: '4px',
+  margin: '4px 8px',
   display: 'flex',
   height: '100%',
   alignItems: 'center',
