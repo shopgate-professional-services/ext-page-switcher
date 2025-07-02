@@ -68,14 +68,16 @@
           "label": "Women",
           "categoryId": "123",
           "externalUrl": "",
-          "icon": null
+          "icon": null,
+          "iconAltText": "label for icon"
         },
         {
           "path": "/page/men",
           "label": "Men",
           "categoryId": "456",
           "externalUrl": "",
-          "icon": null
+          "icon": null,
+          "iconAltText": "label for icon"
         },
         {
           "path": "",

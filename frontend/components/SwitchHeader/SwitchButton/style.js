@@ -2,7 +2,7 @@ import { css } from 'glamor';
 import { themeConfig } from '@shopgate/engage';
 import { linkColor, linkSelectedColor, underlineOnActive } from '../../../config';
 
-const { colors } = themeConfig;
+const { colors, shadows } = themeConfig;
 
 const button = css({
   display: 'block',
@@ -26,17 +26,25 @@ const activeButton = css({
   },
 }).toString();
 
-const activeSwitchButton = css({
+const activeIconButton = css({
+  boxShadow: shadows.material,
   backgroundColor: colors.light,
   padding: '6px 18px',
+  ':focus-visible': {
+    outline: 'none !important',
+  },
   borderRadius: '50px',
   ' path': {
     stroke: colors.dark,
   },
 }).toString();
 
-const switchButton = css({
+const iconButton = css({
+  padding: '6px 18px',
   borderRadius: '50px',
+  ':focus-visible': {
+    outline: 'none !important',
+  },
   ' path': {
     stroke: colors.shade9,
   },
@@ -45,6 +53,6 @@ const switchButton = css({
 export default {
   button,
   activeButton,
-  switchButton,
-  activeSwitchButton,
+  iconButton,
+  activeIconButton,
 };

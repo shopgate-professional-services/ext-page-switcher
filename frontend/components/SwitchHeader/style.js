@@ -44,14 +44,13 @@ const menuItem = css({
 const iconMenu = css({
   margin: '4px 8px',
   display: 'flex',
-  height: '100%',
   alignItems: 'center',
   borderRadius: '50px',
   backgroundColor: colors.shade10,
 }).toString();
 
 const iconMenuItem = css({
-  margin: '0 4px',
+  margin: '4px',
   display: 'flex',
   alignItems: 'center',
 }).toString();

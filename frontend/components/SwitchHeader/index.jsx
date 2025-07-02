@@ -24,9 +24,10 @@ const SwitchHeader = ({ isVisible, selection, children }) => (
           .map(link => (
             <li
               key={link.label}
-              className={classNames(iconSwitch
-                ? styles.iconMenuItem
-                : styles.menuItem, 'page-switcher__menu-item')}
+              className={classNames(
+                iconSwitch ? styles.iconMenuItem : styles.menuItem,
+                iconSwitch ? 'page-switcher__icon-menu-item' : 'page-switcher__menu-item'
+              )}
             >
               <SwitchButton
                 isActive={selection.path === link.path}

@@ -42,7 +42,7 @@ const SwitchButton = ({
         onClick={handleClick}
         type="button"
         ref={switchButtonRef}
-        className={isActive ? styles.activeSwitchButton : styles.switchButton}
+        className={isActive ? styles.activeIconButton : styles.iconButton}
       >
         <Icon content={icon} size={28} />
       </button>
