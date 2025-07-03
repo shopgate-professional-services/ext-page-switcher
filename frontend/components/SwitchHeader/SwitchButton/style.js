@@ -30,12 +30,9 @@ const activeIconButton = css({
   boxShadow: shadows.material,
   backgroundColor: colors.light,
   padding: '6px 18px',
+  borderRadius: '50px',
   ':focus-visible': {
     outline: 'none !important',
-  },
-  borderRadius: '50px',
-  ' path': {
-    stroke: colors.dark,
   },
 }).toString();
 
@@ -44,9 +41,6 @@ const iconButton = css({
   borderRadius: '50px',
   ':focus-visible': {
     outline: 'none !important',
-  },
-  ' path': {
-    stroke: colors.shade9,
   },
 }).toString();
 
