@@ -4,17 +4,11 @@
   "description": "",
   "license": "Apache-2.0",
   "scripts": {
-    "lint": "eslint --parser babel-eslint --ignore-path ../.gitignore --ignore-path .eslintignore --ext .js --ext .jsx .",
-    "test": "jest",
-    "test:watch": "npm run test -- --watch",
-    "coverage": "jest --coverage",
-    "coverage:watch": "npm run coverage -- --watch",
-    "dummy": ""
+    "lint": "eslint --parser babel-eslint --ignore-path ../.gitignore --ignore-path .eslintignore --ext .js --ext .jsx ."
   },
   "devDependencies": {
     "@shopgate/engage": "^6.22.4",
     "@shopgate/eslint-config": "^6.11.0",
-    "jest": "^22.4.2",
     "babel-core": "^6.26.0",
     "babel-plugin-react-transform": "^3.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
