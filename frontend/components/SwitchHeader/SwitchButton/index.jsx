@@ -44,7 +44,7 @@ const SwitchButton = ({
         ref={switchButtonRef}
         className={isActive ? styles.activeIconButton : styles.iconButton}
       >
-        <Icon content={icon} size={28} />
+        <Icon content={icon} size={26} />
       </button>
     );
   }

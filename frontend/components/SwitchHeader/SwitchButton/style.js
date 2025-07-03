@@ -29,7 +29,7 @@ const activeButton = css({
 const activeIconButton = css({
   boxShadow: shadows.material,
   backgroundColor: colors.light,
-  padding: '6px 18px',
+  padding: '4px 12px',
   borderRadius: '50px',
   ':focus-visible': {
     outline: 'none !important',
@@ -37,7 +37,7 @@ const activeIconButton = css({
 }).toString();
 
 const iconButton = css({
-  padding: '6px 18px',
+  padding: '4px 12px',
   borderRadius: '50px',
   ':focus-visible': {
     outline: 'none !important',
