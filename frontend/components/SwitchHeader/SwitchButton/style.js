@@ -2,7 +2,7 @@ import { css } from 'glamor';
 import { themeConfig } from '@shopgate/engage';
 import { linkColor, linkSelectedColor, underlineOnActive } from '../../../config';
 
-const { colors } = themeConfig;
+const { colors, shadows } = themeConfig;
 
 const button = css({
   display: 'block',
@@ -26,7 +26,27 @@ const activeButton = css({
   },
 }).toString();
 
+const iconButtonBase = {
+  padding: '4px 16px',
+  borderRadius: '50px',
+  ':focus-visible': {
+    outline: 'none !important',
+  },
+};
+
+const activeIconButton = css({
+  ...iconButtonBase,
+  boxShadow: shadows.material,
+  backgroundColor: colors.light,
+}).toString();
+
+const iconButton = css({
+  ...iconButtonBase,
+}).toString();
+
 export default {
   button,
   activeButton,
+  iconButton,
+  activeIconButton,
 };

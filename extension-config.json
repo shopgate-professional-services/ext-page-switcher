@@ -50,6 +50,15 @@
     }
   ],
   "configuration": {
+    "iconSwitch": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": false,
+      "params": {
+        "type": "checkbox",
+        "label": "whether page switcher is an icon switcher (configure icons in pageLinking)"
+      }
+    },
     "pageLinking": {
       "type": "admin",
       "destination": "frontend",
@@ -58,13 +67,17 @@
           "path": "/",
           "label": "Women",
           "categoryId": "123",
-          "externalUrl": ""
+          "externalUrl": "",
+          "icon": null,
+          "iconAltText": "label for icon"
         },
         {
           "path": "/page/men",
           "label": "Men",
           "categoryId": "456",
-          "externalUrl": ""
+          "externalUrl": "",
+          "icon": null,
+          "iconAltText": "label for icon"
         },
         {
           "path": "",

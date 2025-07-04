@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [1.4.3] - 2025-04-01
+## [1.5.0] - 2025-06-30
+### Added
+- Enable icons as page switcher buttons
+
+## [1.4.3] - 2025-06-26
 ### Fixed
 - Navigation aligned to the right edge and prevented from overflowing
 
