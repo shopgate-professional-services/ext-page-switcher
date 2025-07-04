@@ -8,12 +8,11 @@ Set the following value in your Shopgate Connect Admin:
 
   * `iconSwitch` - (boolean) If `true` the page switcher will be an icon switch (configure the icons in pageLinking), default false
   * `pageLinking` - (json) Array
-    * `label` - (string) The text displayed for the link.
+    * `label` - (string) The text displayed for the link or used as alt text for icon buttons.
     * `path` - (string) The internal path to the linked page.
     * `categoryId` - (string) The linked page belongs to this category.
     * `externalUrl` - (string) The URL to an external page. If specified, this URL is used instead of `path`.
     * `icon` - (string) If specified, the switch button will be this icon.
-    * `iconAltText` - (string) For accessibility, add a descriptive label to be announced by screen readers
   * `linkColor` - (string) Color of links.
   * `linkSelectedColor` - (string) Color of the selected link.
   * `underlineOnActive` - (boolean) If `true`, the active link is underlined.

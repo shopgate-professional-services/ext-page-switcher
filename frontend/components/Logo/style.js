@@ -4,6 +4,13 @@ import { showSwitcherInHeader } from '../../config';
 
 const { variables } = themeConfig;
 
+// Update styling of the burger icon in the category drawer app bar
+css.global('.category-drawer__app-bar-burger-icon', {
+  position: 'relative',
+  top: 'initial',
+  transform: 'initial',
+});
+
 const container = css({
   alignItems: 'center',
   display: 'flex',

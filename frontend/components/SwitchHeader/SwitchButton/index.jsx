@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { Icon } from '@shopgate/engage/components';
 import connect from './connector';
 import styles from './style';
@@ -42,7 +43,12 @@ const SwitchButton = ({
         onClick={handleClick}
         type="button"
         ref={switchButtonRef}
-        className={isActive ? styles.activeIconButton : styles.iconButton}
+        className={classNames({
+          [styles.activeIconButton]: isActive,
+          selected: isActive,
+          [styles.iconButton]: !isActive,
+        })}
+        aria-label={link.label}
       >
         <Icon content={icon} size={26} />
       </button>

@@ -55,8 +55,8 @@
       "destination": "frontend",
       "default": false,
       "params": {
-        "type": "boolean",
-        "label": "whether page switcher is icon switcher (configure icons in pageLinking)"
+        "type": "checkbox",
+        "label": "whether page switcher is an icon switcher (configure icons in pageLinking)"
       }
     },
     "pageLinking": {

@@ -26,22 +26,22 @@ const activeButton = css({
   },
 }).toString();
 
-const activeIconButton = css({
-  boxShadow: shadows.material,
-  backgroundColor: colors.light,
-  padding: '4px 12px',
+const iconButtonBase = {
+  padding: '4px 16px',
   borderRadius: '50px',
   ':focus-visible': {
     outline: 'none !important',
   },
+};
+
+const activeIconButton = css({
+  ...iconButtonBase,
+  boxShadow: shadows.material,
+  backgroundColor: colors.light,
 }).toString();
 
 const iconButton = css({
-  padding: '4px 12px',
-  borderRadius: '50px',
-  ':focus-visible': {
-    outline: 'none !important',
-  },
+  ...iconButtonBase,
 }).toString();
 
 export default {
