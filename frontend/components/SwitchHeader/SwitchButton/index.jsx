@@ -1,23 +1,66 @@
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
 import { Icon } from '@shopgate/engage/components';
-import connect from './connector';
-import styles from './style';
+import { makeStyles } from '@shopgate/engage/styles';
+import config from '../../../config.json';
+import { setSelection } from '../../../action-creators';
+
+const { linkColor, linkSelectedColor, underlineOnActive } = config;
+
+const iconButtonBase = {
+  padding: '4px 16px',
+  borderRadius: '50px',
+  '&:focus-visible': {
+    outline: 'none !important',
+  },
+};
+
+const useStyles = makeStyles()(theme => ({
+  button: {
+    display: 'block',
+    padding: '1px 6px',
+    textDecoration: 'none',
+    color: linkColor || theme.palette.text.secondary,
+    fontSize: '14px',
+    '&:focus': {
+      outline: 'none !important',
+    },
+  },
+  activeButton: {
+    display: 'block',
+    padding: '1px 6px',
+    textDecoration: underlineOnActive ? 'underline' : 'none',
+    color: linkSelectedColor || theme.palette.primary.main,
+    fontSize: '14px',
+    '&:focus': {
+      outline: 'none !important',
+    },
+  },
+  iconButton: {
+    ...iconButtonBase,
+  },
+  activeIconButton: {
+    ...iconButtonBase,
+    boxShadow: theme.shadows[2],
+    backgroundColor: theme.palette.background.surface,
+  },
+}));
 
 /**
  * SwitchButton component
  * @param {Object} props The component props.
  * @param {boolean} props.isActive Indicates if the button is active or not.
  * @param {Object} props.link The link object that contains the label and other properties.
- * @param {Function} props.setSelection Function to handle the selection change.
  * @param {boolean} [props.isIconSwitch] Indicates if the button is an icon switch
  * @param {string} [props.icon] optional icon to show as switch
  * @returns {JSX.Element}
  */
 const SwitchButton = ({
-  isActive, link, setSelection, icon, isIconSwitch,
+  isActive, link, icon, isIconSwitch,
 }) => {
+  const { classes, cx } = useStyles();
+  const dispatch = useDispatch();
   const buttonRef = useRef(null);
   const switchButtonRef = useRef(null);
 
@@ -25,7 +68,7 @@ const SwitchButton = ({
    * Sets the current page selection.
    */
   const handleClick = () => {
-    setSelection(link);
+    dispatch(setSelection(link));
   };
 
   useEffect(() => {
@@ -43,10 +86,10 @@ const SwitchButton = ({
         onClick={handleClick}
         type="button"
         ref={switchButtonRef}
-        className={classNames({
-          [styles.activeIconButton]: isActive,
+        className={cx({
+          [classes.activeIconButton]: isActive,
           selected: isActive,
-          [styles.iconButton]: !isActive,
+          [classes.iconButton]: !isActive,
         })}
         aria-label={link.label}
       >
@@ -60,7 +103,7 @@ const SwitchButton = ({
       ref={buttonRef}
       type="button"
       onClick={handleClick}
-      className={isActive ? styles.activeButton : styles.button}
+      className={isActive ? classes.activeButton : classes.button}
       aria-current={isActive ? 'page' : undefined}
     >
       {link.label}
@@ -71,7 +114,6 @@ const SwitchButton = ({
 SwitchButton.propTypes = {
   isActive: PropTypes.bool.isRequired,
   link: PropTypes.shape().isRequired,
-  setSelection: PropTypes.func.isRequired,
   icon: PropTypes.string,
   isIconSwitch: PropTypes.bool,
 };
@@ -81,6 +123,4 @@ SwitchButton.defaultProps = {
   isIconSwitch: false,
 };
 
-SwitchButton.defaultProps = {};
-
-export default connect(SwitchButton);
+export default SwitchButton;

@@ -1,32 +1,86 @@
-import React from 'react';
+import { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { withRoute } from '@shopgate/engage/core';
-import classNames from 'classnames';
-import styles from './style';
-import connect from './connector';
+import { makeStyles } from '@shopgate/engage/styles';
+import config from '../../config.json';
+import { makeGetIsSwitchVisible, getSelection } from '../../selectors';
 import SwitchButton from './SwitchButton';
-import { pageLinking, showSwitcherInHeader, iconSwitch } from '../../config';
+
+const { pageLinking, showSwitcherInHeader, iconSwitch } = config;
+
+const useStyles = makeStyles()(theme => ({
+  container: {
+    display: 'flex',
+    alignItems: 'center',
+    zIndex: 1,
+  },
+  switchMenu: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    height: '100%',
+    alignItems: 'center',
+  },
+  menuItem: {
+    marginRight: '10px',
+    position: 'relative',
+    '&:not(:last-child)::after': {
+      content: '""',
+      position: 'absolute',
+      right: '-5px',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      borderLeft: `1px solid ${theme.components.separatorLine.borderColor}`,
+      height: '50%',
+    },
+    '&:first-child': {
+      marginLeft: '10px',
+    },
+    '&:last-child': {
+      marginRight: '10px',
+    },
+  },
+  iconMenu: {
+    margin: '4px 8px',
+    display: 'flex',
+    alignItems: 'center',
+    borderRadius: '50px',
+    backgroundColor: theme.palette.background.emphasized,
+  },
+  iconMenuItem: {
+    margin: '4px',
+    display: 'flex',
+    alignItems: 'center',
+  },
+}));
 
 /**
  * The SwitchHeader component.
  * @param {Object} props The component props.
- * @param {boolean} props.isVisible Determines if the switcher should be displayed.
- * @param {Object} props.selection The currently selected item.
- * @param {string} props.selection.path The path of the selected item.
  * @returns {JSX.Element}
  */
-const SwitchHeader = ({ isVisible, selection, children }) => (
-  showSwitcherInHeader && isVisible ? (
-    <nav className={styles.container}>
-      <ul className={classNames(iconSwitch ? styles.iconMenu : styles.switchMenu, 'page-switcher__menu')}>
+const SwitchHeader = ({ children }) => {
+  const { classes, cx } = useStyles();
+  const getIsSwitchVisible = useMemo(() => makeGetIsSwitchVisible(), []);
+  const isVisible = useSelector(getIsSwitchVisible);
+  const selection = useSelector(getSelection);
+
+  return showSwitcherInHeader && isVisible ? (
+    <nav className={classes.container}>
+      <ul className={cx(iconSwitch ? classes.iconMenu : classes.switchMenu, 'page-switcher__menu')}>
         {pageLinking
           .filter(link => !link.externalUrl)
           .map(link => (
             <li
               key={link.label}
-              className={classNames({
-                [styles.iconMenuItem]: iconSwitch,
-                [styles.menuItem]: !iconSwitch,
+              className={cx({
+                [classes.iconMenuItem]: iconSwitch,
+                [classes.menuItem]: !iconSwitch,
                 'page-switcher__icon-menu-item': iconSwitch,
                 'page-switcher__menu-item': !iconSwitch,
                 active: selection.path === link.path,
@@ -42,12 +96,10 @@ const SwitchHeader = ({ isVisible, selection, children }) => (
           ))}
       </ul>
     </nav>
-  ) : children
-);
+  ) : children;
+};
 
 SwitchHeader.propTypes = {
-  isVisible: PropTypes.bool.isRequired,
-  selection: PropTypes.shape().isRequired,
   children: PropTypes.node,
 };
 
@@ -55,4 +107,4 @@ SwitchHeader.defaultProps = {
   children: null,
 };
 
-export default withRoute(connect(SwitchHeader), { prop: 'route' });
+export default withRoute(SwitchHeader, { prop: 'route' });

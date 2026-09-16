@@ -4,19 +4,19 @@
   "description": "",
   "license": "Apache-2.0",
   "scripts": {
-    "lint": "eslint --parser babel-eslint --ignore-path ../.gitignore --ignore-path .eslintignore --ext .js --ext .jsx ."
+    "lint": "eslint --ignore-path ../.gitignore --ignore-path .eslintignore --ext .js --ext .jsx ."
   },
   "devDependencies": {
-    "@shopgate/engage": "^6.22.4",
-    "@shopgate/eslint-config": "^6.11.0",
-    "classnames": "2.5.1",
-    "eslint": "^5.12.0",
-    "glamor": "^2.20.40",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "@shopgate/eslint-config": "^7.31.8",
+    "eslint": "^8.57.1",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "@shopgate/engage": "7.32.0-beta.20",
+    "@shopgate/pwa-common": "^7.30.0",
+    "@shopgate/pwa-common-commerce": "^7.30.0"
   },
   "dependencies": {
-    "@shopgate-ps/pwa-extension-kit": "^0.6.0"
+    "prop-types": "^15.6.0"
   }
 }
