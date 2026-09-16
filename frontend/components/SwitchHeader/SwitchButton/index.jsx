@@ -6,7 +6,7 @@ import { makeStyles } from '@shopgate/engage/styles';
 import config from '../../../config.json';
 import { setSelection } from '../../../action-creators';
 
-const { linkColor, linkSelectedColor, underlineOnActive } = config;
+const { underlineOnActive } = config;
 
 const iconButtonBase = {
   padding: '4px 16px',
@@ -21,7 +21,7 @@ const useStyles = makeStyles()(theme => ({
     display: 'block',
     padding: '1px 6px',
     textDecoration: 'none',
-    color: linkColor || theme.palette.text.secondary,
+    color: theme.palette.text.secondary,
     fontSize: '14px',
     '&:focus': {
       outline: 'none !important',
@@ -31,7 +31,7 @@ const useStyles = makeStyles()(theme => ({
     display: 'block',
     padding: '1px 6px',
     textDecoration: underlineOnActive ? 'underline' : 'none',
-    color: linkSelectedColor || theme.palette.primary.main,
+    color: theme.palette.text.primary,
     fontSize: '14px',
     '&:focus': {
       outline: 'none !important',

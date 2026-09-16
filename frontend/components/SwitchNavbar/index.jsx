@@ -8,9 +8,7 @@ import config from '../../config.json';
 import { makeGetIsSwitchVisible, getSelection } from '../../selectors';
 import SwitchButton from '../SwitchHeader/SwitchButton';
 
-const {
-  pageLinking, showSwitcherInHeader, hideOnScroll, switcherBarBgColor, linkColor,
-} = config;
+const { pageLinking, showSwitcherInHeader, hideOnScroll } = config;
 
 const useStyles = makeStyles()(theme => ({
   container: {
@@ -18,7 +16,7 @@ const useStyles = makeStyles()(theme => ({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    backgroundColor: switcherBarBgColor,
+    backgroundColor: theme.components.appBar.background,
   },
   switchMenu: {
     listStyle: 'none',
@@ -41,7 +39,7 @@ const useStyles = makeStyles()(theme => ({
       right: '-5px',
       top: '50%',
       transform: 'translateY(-50%)',
-      borderLeft: `1px solid ${linkColor || theme.components.separatorLine.borderColor}`,
+      borderLeft: `1px solid ${theme.palette.text.secondary}`,
       height: '50%',
     },
     '&:first-child': {
@@ -56,7 +54,7 @@ const useStyles = makeStyles()(theme => ({
     display: 'block',
     padding: '1px 6px',
     textDecoration: 'none',
-    color: linkColor || theme.palette.text.secondary,
+    color: theme.palette.text.secondary,
     fontSize: '14px',
     '&:focus': {
       outline: 'none !important',
