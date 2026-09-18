@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { CategoryList } from '@shopgate/engage/category/components';
-import { getCategoryChildren } from '@shopgate/pwa-common-commerce/category/selectors';
+import { getCategoryChildren } from '@shopgate/engage/category';
 import { getSelection } from '../../selectors';
 
 /**
