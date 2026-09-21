@@ -1,4 +1,6 @@
-import { pageLinking } from './config';
+import config from './config.json';
+
+const { pageLinking } = config;
 
 export const REQUEST_SELECTION = 'REQUEST_SELECTION';
 export const RECEIVE_SELECTION = 'RECEIVE_SELECTION';
