@@ -13,11 +13,8 @@ Set the following value in your Shopgate Connect Admin:
     * `categoryId` - (string) The linked page belongs to this category.
     * `externalUrl` - (string) The URL to an external page. If specified, this URL is used instead of `path`.
     * `icon` - (string) If specified, the switch button will be this icon.
-  * `linkColor` - (string) Color of links.
-  * `linkSelectedColor` - (string) Color of the selected link.
   * `underlineOnActive` - (boolean) If `true`, the active link is underlined.
   * `showSwitcherInHeader` - (boolean) If `true`, the switcher is displayed inside the header - otherwise, it is positioned below.
-  * `switcherBarBgColor` - (string) Background color of the switcher bar (when in after header mode).
   * `hideOnScroll` - (boolean) If `true`, the switcher bar hides when scrolling (when in after header mode).
 
 ## Example
@@ -46,10 +43,7 @@ Set the following value in your Shopgate Connect Admin:
     }
   ],
   "iconSwitch": true,
-  "linkColor": "",
-  "linkSelectedColor": "#000",
   "underlineOnActive": false,
-  "navBarBgColor": "#fff",
   "showSwitcherInHeader": true,
   "hideOnScroll": true
 }

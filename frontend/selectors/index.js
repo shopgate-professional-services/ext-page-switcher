@@ -1,7 +1,9 @@
 import { createSelector } from 'reselect';
 import { getCurrentRoute } from '@shopgate/engage/core';
 import { SWITCH_WHITELIST, REDUX_NAMESPACE_SELECTION } from '../constants';
-import { pageLinking } from '../config';
+import config from '../config.json';
+
+const { pageLinking } = config;
 
 /**
  * Creates a selector that determines whether the switch should be visible
