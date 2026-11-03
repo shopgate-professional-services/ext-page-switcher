@@ -7,8 +7,7 @@ import {
   appInitialization,
   redirects,
 } from '@shopgate/engage/core';
-import { fetchCategory } from '@shopgate/engage/category';
-import { getCategoryChildren } from '@shopgate/pwa-common-commerce/category/selectors';
+import { fetchCategory, getCategoryChildren } from '@shopgate/engage/category';
 import { getSelection } from '../selectors';
 import { SET_SELECTION } from '../constants';
 import { browseDidEnter$ } from '../streams';

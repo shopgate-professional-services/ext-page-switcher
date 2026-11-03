@@ -1,29 +1,24 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import { CategoryList } from '@shopgate/engage/category/components';
-import connect from './connector';
+import { getCategoryChildren } from '@shopgate/engage/category';
+import { getSelection } from '../../selectors';
 
 /**
  * The BrowseCategoryList component, showing a category list on the browse page
- * @param {Object} props The component props.
- * @param {Array} props.categories the categories for the category list
- * @returns {JSX.Element}
+ * @returns {JSX.Element|null}
  */
-const BrowseCategoryList = ({ categories }) => {
+const BrowseCategoryList = () => {
+  const { categoryId } = useSelector(getSelection);
+  const categories = useSelector(state => getCategoryChildren(state, { categoryId }));
+
   if (!categories) {
     return null;
   }
+
   return (
     <CategoryList categories={categories} />
   );
 };
 
-BrowseCategoryList.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.shape()),
-};
-
-BrowseCategoryList.defaultProps = {
-  categories: null,
-};
-
-export default connect(BrowseCategoryList);
+export default BrowseCategoryList;

@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## 2.0.0 - 2026-09-16
+### Changed
+- converted the components to the new engage theme styling (tss-react `makeStyles`, `theme.palette`) and updated the toolchain to PWA 7.32
+- moved `@shopgate/engage`, `@shopgate/pwa-common` and `@shopgate/pwa-common-commerce` to peer dependencies
+- removed the `glamor`, `classnames` and `@shopgate-ps/pwa-extension-kit` dependencies
+
+### Removed
+- **Breaking:** removed the `linkColor`, `linkSelectedColor` and `switcherBarBgColor` admin config settings; the header link and switcher-bar colors now come from the active theme
+
 ## 1.5.1 - 2025-08-21
 ### Fixed
 - Fixed logo overlapping category drawer icon when category drawer extension is combined with page switcher

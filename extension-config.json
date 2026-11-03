@@ -91,24 +91,6 @@
         "label": "Page linking"
       }
     },
-    "linkColor": {
-      "type": "admin",
-      "destination": "frontend",
-      "default": "",
-      "params": {
-        "type": "text",
-        "label": "Color of the links in the header"
-      }
-    },
-    "linkSelectedColor": {
-      "type": "admin",
-      "destination": "frontend",
-      "default": "#000",
-      "params": {
-        "type": "text",
-        "label": "Color of the selected page link"
-      }
-    },
     "underlineOnActive": {
       "type": "admin",
       "destination": "frontend",
@@ -116,15 +98,6 @@
       "params": {
         "type": "checkbox",
         "label": "Determines whether the active link is underlined"
-      }
-    },
-    "switcherBarBgColor": {
-      "type": "admin",
-      "destination": "frontend",
-      "default": "#fff",
-      "params": {
-        "type": "text",
-        "label": "Background color of the switcher bar (when in after header mode)"
       }
     },
     "showSwitcherInHeader": {
